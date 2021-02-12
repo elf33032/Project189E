@@ -12,3 +12,8 @@
 ### works done
 3. Come up with the project idea and proposal. Split the project into different parts. Working on designing the logo of the app, as well as the name of the app, which would determine the genre of the app(color, style, etc.)
 
+### roles
+UI:Xi Yang  
+Data management: Yizeng zhou;  
+Framework: Bingwei Wang;
+API management: Shuo Li
