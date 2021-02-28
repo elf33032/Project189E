@@ -14,6 +14,7 @@
 		4D706FED25EB50A100D4905A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D706FEB25EB50A100D4905A /* Main.storyboard */; };
 		4D706FEF25EB50A400D4905A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D706FEE25EB50A400D4905A /* Assets.xcassets */; };
 		4D706FF225EB50A400D4905A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D706FF025EB50A400D4905A /* LaunchScreen.storyboard */; };
+		4D9BC2C025EB834C00A67707 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9BC2BF25EB834C00A67707 /* WelcomeViewController.swift */; };
 		D3A0BC2B25EB5D3600C19676 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A0BC2A25EB5D3600C19676 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		4D706FEE25EB50A400D4905A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D706FF125EB50A400D4905A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D706FF325EB50A400D4905A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D9BC2BF25EB834C00A67707 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		7BD7805F1775E12AAEFCB46A /* Pods-FinalProject189e.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProject189e.release.xcconfig"; path = "Target Support Files/Pods-FinalProject189e/Pods-FinalProject189e.release.xcconfig"; sourceTree = "<group>"; };
 		D3A0BC2A25EB5D3600C19676 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EE54C14400098706A3651118 /* Pods-FinalProject189e.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProject189e.debug.xcconfig"; path = "Target Support Files/Pods-FinalProject189e/Pods-FinalProject189e.debug.xcconfig"; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				4D706FF025EB50A400D4905A /* LaunchScreen.storyboard */,
 				D3A0BC2A25EB5D3600C19676 /* HomeViewController.swift */,
 				4D706FF325EB50A400D4905A /* Info.plist */,
+				4D9BC2BF25EB834C00A67707 /* WelcomeViewController.swift */,
 			);
 			path = FinalProject189e;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D706FEA25EB50A100D4905A /* ViewController.swift in Sources */,
+				4D9BC2C025EB834C00A67707 /* WelcomeViewController.swift in Sources */,
 				4D706FE625EB50A100D4905A /* AppDelegate.swift in Sources */,
 				4D706FE825EB50A100D4905A /* SceneDelegate.swift in Sources */,
 				D3A0BC2B25EB5D3600C19676 /* HomeViewController.swift in Sources */,
