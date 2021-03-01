@@ -6,42 +6,15 @@
 //
 
 import UIKit
-import MapKit
+import Mapbox
 
 class HomeViewController: UIViewController {
-
     
-    @IBOutlet private var mapView: MKMapView!
-
+    @IBOutlet var mapView: MGLMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let initialLocation = CLLocation(latitude: 38.537, longitude: -121.754)
-        mapView.centerToLocation(initialLocation)
+        mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        mapView.setCenter(CLLocationCoordinate2D(latitude: 38.537, longitude: -121.754), zoomLevel: 14, animated: false)
     }
-}
-
-private extension MKMapView {
-  func centerToLocation(
-    _ location: CLLocation,
-    regionRadius: CLLocationDistance = 1000
-  ) {
-    let coordinateRegion = MKCoordinateRegion(
-      center: location.coordinate,
-      latitudinalMeters: regionRadius,
-      longitudinalMeters: regionRadius)
-    setRegion(coordinateRegion, animated: true)
-  }
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

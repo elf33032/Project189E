@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fYt-dS-hz8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fYt-dS-hz8">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,17 +16,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="CvW-Wl-EFY">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bwv-r8-Sav" customClass="MGLMapView">
                                 <rect key="frame" x="0.0" y="138" width="414" height="625"/>
-                            </mapView>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="styleURL__" value="mapbox://styles/mapbox/streets-v11"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="CvW-Wl-EFY" secondAttribute="bottom" constant="50" id="Y6x-RV-bsi"/>
-                            <constraint firstItem="CvW-Wl-EFY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cct-Ip-TNe"/>
-                            <constraint firstItem="CvW-Wl-EFY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="iri-Ru-2e8"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CvW-Wl-EFY" secondAttribute="trailing" id="knM-ml-EJC"/>
+                            <constraint firstItem="bwv-r8-Sav" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EO2-JK-tyM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bwv-r8-Sav" secondAttribute="trailing" id="LZ4-f2-Sfp"/>
+                            <constraint firstItem="bwv-r8-Sav" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="skE-dp-4Rx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bwv-r8-Sav" secondAttribute="bottom" constant="50" id="vR5-Y5-omp"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="UmJ-Mn-IsZ"/>
@@ -34,7 +38,7 @@
                     <navigationItem key="navigationItem" id="Nss-qk-frz"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="mapView" destination="CvW-Wl-EFY" id="lMT-Ex-bEX"/>
+                        <outlet property="mapView" destination="bwv-r8-Sav" id="e5X-a8-7pB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
