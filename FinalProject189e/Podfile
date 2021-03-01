@@ -3,7 +3,10 @@ platform :ios, '9.0'
 
 target 'FinalProject189e' do
   # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!  
-  # Pods for FinalProject189e
+  use_frameworks!
+
+  # Pods for CNN
+
+  pod 'Mapbox-iOS-SDK', '~> 6.3.0'
 
 end
