@@ -23,6 +23,14 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="styleURL__" value="mapbox://styles/mapbox/streets-v11"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Itg-Iq-hm5">
+                                <rect key="frame" x="356" y="783" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Me"/>
+                                <connections>
+                                    <action selector="centerToUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J76-hD-LKu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -38,6 +46,7 @@
                     <navigationItem key="navigationItem" id="Nss-qk-frz"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="centerUser" destination="Itg-Iq-hm5" id="6Ye-cw-FFn"/>
                         <outlet property="mapView" destination="bwv-r8-Sav" id="e5X-a8-7pB"/>
                     </connections>
                 </viewController>
