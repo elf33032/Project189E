@@ -38,7 +38,11 @@ class HomeViewController: UIViewController, MGLMapViewDelegate {
     @objc func handleMapTap(sender: UITapGestureRecognizer) {
         let spot = sender.location(in: mapView)
         let features = mapView.visibleFeatures(at: spot)
-        let spot_name = features.first?.attribute(forKey: "name") as? String
-        print(spot_name ?? "no name")
+        if features.first != nil {
+            print(features.first ?? "sb")
+            if features.first?.attribute(forKey: "name") != nil {
+                print(features.first?.attribute(forKey: "name") ?? "sb")
+            }
+        }
     }
 }
