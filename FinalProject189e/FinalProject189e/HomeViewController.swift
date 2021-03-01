@@ -7,11 +7,14 @@
 
 import UIKit
 import Mapbox
+import MapboxSearch
 
-class HomeViewController: UIViewController, MGLMapViewDelegate {
+class HomeViewController: UIViewController, MGLMapViewDelegate, SearchEngineDelegate {
     
     @IBOutlet weak var centerUser: UIButton!
     @IBOutlet var mapView: MGLMapView!
+    
+    let searchEngine = SearchEngine()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +27,12 @@ class HomeViewController: UIViewController, MGLMapViewDelegate {
         }
         mapView.addGestureRecognizer(singleTap)
         mapView.showsUserLocation = true
+        searchEngine.delegate = self
         
+    }
+    
+    @IBAction func centerToUser(_ sender: Any) {
+        mapView.setCenter(mapView.userLocation?.coordinate ?? CLLocationCoordinate2D(latitude: 38.537, longitude: -121.754), zoomLevel: 14, animated: true)
     }
     
     /**
@@ -32,17 +40,29 @@ class HomeViewController: UIViewController, MGLMapViewDelegate {
      which will generate a pop up for user
      click to switch to SIGN page
      */
-    @IBAction func centerToUser(_ sender: Any) {
-        mapView.setCenter(mapView.userLocation?.coordinate ?? CLLocationCoordinate2D(latitude: 38.537, longitude: -121.754), zoomLevel: 14, animated: true)
-    }
     @objc func handleMapTap(sender: UITapGestureRecognizer) {
         let spot = sender.location(in: mapView)
         let features = mapView.visibleFeatures(at: spot)
         if features.first != nil {
-            print(features.first ?? "sb")
-            if features.first?.attribute(forKey: "name") != nil {
-                print(features.first?.attribute(forKey: "name") ?? "sb")
-            }
+            print(features.first?.coordinate.latitude ?? "sb")
+            print(features.first?.coordinate.longitude ?? "sb")
+            let query_coordinate = String((features.first?.coordinate.latitude)!) + ", " + String((features.first?.coordinate.longitude)!)
+            print(query_coordinate)
+            searchEngine.search(query: query_coordinate)
         }
     }
+    
+    func resultsUpdated(searchEngine: SearchEngine) {
+        print("Number of search results: \(searchEngine.items.count) for query: \(searchEngine.query)")
+    }
+    
+    func resolvedResult(result: SearchResult) {
+        print("Dumping resolved result:", dump(result))
+    }
+    
+    func searchErrorHappened(searchError: SearchError) {
+        print("Error during search: \(searchError)")
+    }
+    
+    
 }

@@ -2,6 +2,7 @@ PODS:
   - Mapbox-iOS-SDK (6.3.0):
     - MapboxMobileEvents (~> 0.10.4)
   - MapboxCommon (9.0.2)
+  - MapboxGeocoder.swift (0.13.0)
   - MapboxMobileEvents (0.10.8)
   - MapboxSearch (1.0.0-beta.4):
     - MapboxCommon (~> 9.0.0)
@@ -9,21 +10,24 @@ PODS:
 
 DEPENDENCIES:
   - Mapbox-iOS-SDK (~> 6.3.0)
+  - MapboxGeocoder.swift (~> 0.13)
   - MapboxSearch (< 2.0, >= 1.0.0-beta.3)
 
 SPEC REPOS:
   trunk:
     - Mapbox-iOS-SDK
     - MapboxCommon
+    - MapboxGeocoder.swift
     - MapboxMobileEvents
     - MapboxSearch
 
 SPEC CHECKSUMS:
   Mapbox-iOS-SDK: 2563ed87ead6ec08f1c2090873977b8a7be335a8
   MapboxCommon: 1c856a49ca7e8acda99fee5f27ce2e7a05478a34
+  MapboxGeocoder.swift: b128b1e811b440aa59ba7b5a249a1e3212d55700
   MapboxMobileEvents: 36ff53b135aac486eed94b61f813c7967a0c2c6f
   MapboxSearch: f268063490ef583621daeb4e15de7ddc95bd4f67
 
-PODFILE CHECKSUM: 3d6a755c479d399f2c3acb976374b68aa910e3d0
+PODFILE CHECKSUM: c12bb4991b3e5ffe177e7af341ed38b38fe4d598
 
 COCOAPODS: 1.10.1
