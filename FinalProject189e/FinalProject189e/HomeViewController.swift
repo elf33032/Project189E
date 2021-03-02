@@ -8,14 +8,13 @@
 import UIKit
 import Mapbox
 import MapboxSearch
-import MapboxGeocoder
 
-class HomeViewController: UIViewController, MGLMapViewDelegate {
+class HomeViewController: UIViewController, MGLMapViewDelegate, SearchEngineDelegate {
     
     @IBOutlet weak var centerUser: UIButton!
     @IBOutlet var mapView: MGLMapView!
     
-    let geocoder = Geocoder.shared
+    let searchEngine = SearchEngine()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +27,7 @@ class HomeViewController: UIViewController, MGLMapViewDelegate {
         }
         mapView.addGestureRecognizer(singleTap)
         mapView.showsUserLocation = true
+        searchEngine.delegate = self
         
     }
     
@@ -44,18 +44,25 @@ class HomeViewController: UIViewController, MGLMapViewDelegate {
         let spot = sender.location(in: mapView)
         let features = mapView.visibleFeatures(at: spot)
         if features.first != nil {
-            //print(features.first?.coordinate.latitude ?? "sb")
-            //print(features.first?.coordinate.longitude ?? "sb")
+            print(features.first?.coordinate.latitude ?? "sb")
+            print(features.first?.coordinate.longitude ?? "sb")
             let query_coordinate = String((features.first?.coordinate.latitude)!) + ", " + String((features.first?.coordinate.longitude)!)
-            //print(query_coordinate)
-            let options = ReverseGeocodeOptions(coordinate: features.first!.coordinate)
-            let task = geocoder.geocode(options) { (placemarks, attribution, error) in
-                guard let placemark = placemarks?.first else {
-                    return
-                }
-                print(placemark.formattedName)
-                print(placemark.name)
-            }
+            print(query_coordinate)
+            searchEngine.search(query: query_coordinate)
         }
     }
+    
+    func resultsUpdated(searchEngine: SearchEngine) {
+        print("Number of search results: \(searchEngine.items.count) for query: \(searchEngine.query)")
+    }
+    
+    func resolvedResult(result: SearchResult) {
+        print("Dumping resolved result:", dump(result))
+    }
+    
+    func searchErrorHappened(searchError: SearchError) {
+        print("Error during search: \(searchError)")
+    }
+    
+    
 }
